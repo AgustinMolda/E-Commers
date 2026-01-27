@@ -53,7 +53,8 @@ class ProductController extends Controller
      */
     public function edit(Integer $id)
     {
-        return view('product.edit');
+        $product= $this->service->find($id);
+        return view('product.edit', compact('product'));
     }
 
     /**

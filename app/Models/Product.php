@@ -31,5 +31,9 @@ class Product extends Model
         return $this->hasOne(Categories::class);
     }
 
+    public function detalles_pedidos(): HasOne{
+        return $this->hasOne(Detalles_pedido::class, 'producto_id');
+    }
+
     
 }

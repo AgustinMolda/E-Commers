@@ -34,8 +34,9 @@ class ProductService
     public function update(array $data, Integer $id){
            $product= Product::findOrFail($id);
            
-            $product->save($data);
+            $product->update($data);
            
+            return $product;
     }   
 
     public function destroy(integer $id){
