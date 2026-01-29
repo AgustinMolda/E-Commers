@@ -2,7 +2,9 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DetallesPedidosController;
+use App\Http\Controllers\PedidosController;
 use App\Http\Controllers\ProductController;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -32,3 +34,7 @@ Route::resource('pedidos', App\Http\Controllers\PedidosController::class)->middl
 
 Route::resource('detalles_pedidos', DetallesPedidosController::class)->middleware('auth');
 
+Route::post('/correo',function ()  {
+    Mail::to('eberandalf@gmail.com')->send(new \App\Mail\PedidosEmail());
+    return 'Correo enviado';
+})->name('enviar.correo');

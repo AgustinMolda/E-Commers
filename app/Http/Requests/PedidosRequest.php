@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 
+use App\Mail\PedidosEmail;
 use Illuminate\Foundation\Http\FormRequest;
 
 class PedidosRequest extends FormRequest
@@ -27,4 +28,6 @@ class PedidosRequest extends FormRequest
               'estado' => 'required|string',
         ];
     }
+
+  
 }
